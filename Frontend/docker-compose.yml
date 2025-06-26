@@ -1,0 +1,22 @@
+services:
+  node:
+    image: node-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_VERSION=${NODE_VERSION:-lts}
+    hostname: node-js
+    ports:
+      - "${PORT_DEV:-5173}:${PORT_DEV:-5173}"
+      - "${PORT_PROD:-4173}:${PORT_PROD:-4173}"
+    volumes:
+      - ./proyectos:/proyectos
+      - node_data:/home/node
+      - root_data:/root
+      - local_data:/usr/local
+
+volumes:
+  node_data:
+  root_data:
+  local_data:

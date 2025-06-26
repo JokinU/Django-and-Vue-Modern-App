@@ -1,0 +1,16 @@
+services:
+  python-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PYTHON_VERSION=${PYTHON_VERSION:-3.13}
+    hostname: python-docker
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./proyectos:/proyectos
+      - root_data:/root
+
+volumes:
+  root_data:
