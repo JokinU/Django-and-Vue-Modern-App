@@ -10,8 +10,8 @@ class Site(models.Model):
     logo = models.ImageField(upload_to="site/logo")
 
     class Meta:
-        verbose_name = "site"
-        verbose_name_plural = "1. Site"
+        verbose_name = "sitio"
+        verbose_name_plural = "1. Sitios"
 
     def __str__(self):
         return self.name
@@ -28,8 +28,8 @@ class User(AbstractUser):
     joined_date = models.DateField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "user"
-        verbose_name_plural = "2. Users"
+        verbose_name = "usuario"
+        verbose_name_plural = "2. Usuarios"
 
     def __str__(self):
         return self.username
@@ -88,7 +88,7 @@ class Entrenamiento(models.Model):
 
     class Meta:
         verbose_name = "entrenamiento"
-        verbose_name_plural = "3.Entrenamientos"
+        verbose_name_plural = "3. Entrenamientos"
     def __str__(self):
         return self.titulo
     def get_number_of_likes(self):

@@ -23,6 +23,7 @@ class EquipoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Site)
+admin.site.register(User, UserAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Entrenamiento, EntrenamientoAdmin)
 admin.site.register(Corredor, CorredorAdmin)
